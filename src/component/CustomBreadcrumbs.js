@@ -6,46 +6,32 @@ import { Link as RouterLink, useLocation } from "react-router-dom"
 import { Grid, Typography } from "@mui/material"
 
 
-
-
-
+// ...
 const CustomBreadcrumbs = ({ pages }) => {
   return (
-    <Grid container spacing={2} py={2} px={4}>
+    <Grid container spacing={0} py={0} px={0}>
       <Grid item md={12} xs={12}>
 
-        <Breadcrumbs
-
-          aria-label="breadcrumb"
-          color
+      <Breadcrumbs
+          aria-label=""
           style={{
-            color: "#AA00FF"
+            background: "linear-gradient(45deg, #4a1a1c,#0f1849)", // เพิ่มสไตล์พื้นหลังแบบไล่สี
+            padding: "10px",
+            borderRadius: "5px", // เพิ่มเส้นขอบของพื้นหลัง
           }}
         >
-          <Link key={"home"} to={"/"}
-            component={RouterLink}
-            underline="hover"
-            style={{
-              color: "#ab003c",
-            }}
-          >
-            Home
-          </Link>
-
           {pages?.map((page, index) =>
             page.path ? (
               <Link
                 key={index}
                 to={page.path}
                 component={RouterLink}
-                style={{
-                  color: "#ab003c",
-                }}
+                style={{ color: "#FFFAFA" }}
               >
                 {page.title}
               </Link>
             ) : (
-              <Typography key={index} style={{ color: "#ab003c" }}>
+              <Typography key={index} style={{ color: "#FFFAFA" }}>
                 {page.title}
               </Typography>
             )
@@ -57,6 +43,8 @@ const CustomBreadcrumbs = ({ pages }) => {
     </Grid>
   )
 }
+// ...
+
 CustomBreadcrumbs.propTypes = {
   pages: PropTypes.arrayOf(
     PropTypes.shape({
