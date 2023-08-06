@@ -13,19 +13,20 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import Appbar from '../component/Appbar';
+
 import Breadcrumbs from '../component/CustomBreadcrumbs';
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography variant="body2" color="text.secondary" align="center" sx={{ color: '#000000' }}>
       {'Copyright © '}
-      <Link color="inherit" href="https://www.facebook.com/profile.php?id=100004005796627">
+      <Link color="inherit" href="https://www.facebook.com/profile.php?id=100004005796627" sx={{ color: '#000000' }}>
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
+
   );
 }
 
@@ -46,12 +47,14 @@ export default function SignInSide() {
   return (
     <ThemeProvider theme={defaultTheme}>
 
-    
+
       <Breadcrumbs
         pages={[
           { title: "Home", path: "/" },
           { title: "Sign in", path: "/signin" },
           { title: "Sign up", path: "/signup" },
+          { title: "Tournament", path: "/Tournament" },
+          { title: "TournamentList", path: "/TournamentList" },
         ]}
       />
 
@@ -81,7 +84,7 @@ export default function SignInSide() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: '#3366CC' }}>
+            <Avatar sx={{ m: 1, bgcolor: '#FF8C00' }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -116,23 +119,39 @@ export default function SignInSide() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{
+                  mt: 3, mb: 2,
+                  backgroundColor: '#FF8C00',
+                  '&:hover': {
+                    bgcolor: '#B22222',
+                  },
+                }}
+
               >
                 Sign In
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Link href="#" variant="body2"
+                    sx={{
+                      color: '#000000',
+                      textDecoration: 'underline',
+                    }}>
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link href="/signup" variant="body2"
+                    sx={{
+                      color: '#000000',
+                      textDecoration: 'underline',
+                    }}>
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
+              <Copyright sx={{ mt: 5 }}
+              />
             </Box>
           </Box>
         </Grid>

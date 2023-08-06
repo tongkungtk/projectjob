@@ -15,9 +15,9 @@ const CustomBreadcrumbs = ({ pages }) => {
       <Breadcrumbs
           aria-label=""
           style={{
-            background: "linear-gradient(45deg, #4a1a1c,#0f1849)", // เพิ่มสไตล์พื้นหลังแบบไล่สี
+            background: "linear-gradient(45deg, #4a1a1c,#0f1849)", 
             padding: "10px",
-            borderRadius: "5px", // เพิ่มเส้นขอบของพื้นหลัง
+            borderRadius: "5px", 
           }}
         >
           {pages?.map((page, index) =>

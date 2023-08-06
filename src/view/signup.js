@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -7,183 +8,168 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState, useEffect } from 'react';
 
-
-
+import Breadcrumbs from '../component/CustomBreadcrumbs';
 
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {' Minikot '}
-      <Link color="inherit" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">
+    <Typography variant="body2" color="text.secondary" align="center" sx={{ color: '#000000' }}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://www.facebook.com/profile.php?id=100004005796627" sx={{ color: '#000000' }}>
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
+
   );
 }
 
-const theme = createTheme();
+// TODO remove, this demo shouldn't need to reset the theme.
+
+const defaultTheme = createTheme();
 
 export default function SignUp() {
-
-  const [user, setUser] = useState({})
-  const [confirmPassword, setConfirmPassword] = useState('')
-
-  const handleInputChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = async () => {
-    try {
-      if (user.password !== confirmPassword) {
-        alert('Your password is not match.')
-        window.location.reload()
-      } else {
-       
-      }
-    } catch (err) {
-      console.error(err)
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
   };
 
   return (
-    <ThemeProvider theme={theme}>
-    
+
+
+    <ThemeProvider theme={defaultTheme}>
+      <Breadcrumbs
         pages={[
-          { title: "Sign up" },
-        ]} 
+          { title: "Home", path: "/" },
+          { title: "Sign in", path: "/signin" },
+          { title: "Sign up", path: "/signup" },
+          { title: "Tournament", path: "/Tournament" },
+          { title: "TournamentList", path: "/TournamentList" },
+        ]}
+      />
 
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 2,
+            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            backgroundImage: 'linear-gradient(45deg, #4a1a1c,#0f1849)', // เพิ่มสีพื้นหลังที่ต้องการ
+            padding: '20px', // ปรับขนาดการเว้นระยะของ Box
+            borderRadius: '10px', // เพิ่มเส้นขอบของพื้นหลัง
           }}
         >
-
-         
-          <Typography
-            component="h1"
-            variant="h6"
+          <Avatar sx={{ m: 1, bgcolor: '#FF8C00' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5"
             sx={{
-              marginTop: 2,
-            }} >
-            Sign Up
+              color: '#ffffff',
+            }}>
+            Sign up
           </Typography>
-
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 2 }}>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="Member_id"
-                  id="Member_id"
-                  label="Member ID"
-                  autoFocus
-                  onChange={(e) => handleInputChange(e)}
-                />
-              </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  autoComplete="given-name"
+                  name="firstName"
                   required
                   fullWidth
-                  name="Fname"
-                  id="Fname"
+                  id="firstName"
                   label="First Name"
-                  onChange={(e) => handleInputChange(e)}
+                  autoFocus
+                  sx={{
+                    backgroundColor: '#ffffff',
+                    borderRadius: '10px',
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
                   fullWidth
-                  id="Lname"
+                  id="lastName"
                   label="Last Name"
-                  name="Lname"
-                  onChange={(e) => handleInputChange(e)}
+                  name="lastName"
+                  autoComplete="family-name"
+                  sx={{
+                    backgroundColor: '#ffffff',
+                    borderRadius: '10px',
+                  }}
+
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  id="Email"
+                  id="email"
                   label="Email Address"
-                  name="Email"
-                  autoComplete="Email"
-                  onChange={(e) => handleInputChange(e)}
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="Username"
-                  id="Username"
-                  label="Username"
-                  onChange={(e) => handleInputChange(e)}
+                  name="email"
+                  autoComplete="email"
+                  sx={{
+                    backgroundColor: '#ffffff',
+                    borderRadius: '10px',
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  name="Password"
+                  name="password"
                   label="Password"
-                  type="Password"
-                  id="Password"
-                  onChange={(e) => handleInputChange(e)}
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="Password"
-                  label="Confirm Password"
                   type="password"
-                  id="Password"
-                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  id="password"
+                  autoComplete="new-password"
+                  sx={{
+                    backgroundColor: '#ffffff',
+                    borderRadius: '10px',
+                  }}
                 />
               </Grid>
-
               <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="ตกลงการสมัครสมาชิก"
-                />
+
               </Grid>
-
             </Grid>
-
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 2, mb: 2, bgcolor: '#AA00FF' }}
+              sx={{
+                mt: 3, mb: 2,
+                backgroundColor: '#FF8C00',
+                '&:hover': {
+                  bgcolor: '#B22222',
+                },
+              }}
+
             >
               Sign Up
             </Button>
-
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/signin" variant="body2">
+                <Link href="/signin" variant="body2"
+                  sx={{
+                    color: '#FFFFFF',
+                    textDecoration: 'underline',
+                  }}>
                   Already have an account? Sign in
-                </Link>
 
+                </Link>
               </Grid>
             </Grid>
           </Box>

@@ -92,7 +92,6 @@ export default function Appbar() {
                                     sx={{
                                         bgcolor: '#FF8C00',
                                         color: '#000000',
-                                        fontFamily: 'monospace',
                                         '&:hover': {
                                             bgcolor: '#B22222',
                                         },
@@ -108,7 +107,6 @@ export default function Appbar() {
                                     sx={{
                                         bgcolor: '#FF8C00',
                                         color: '#000000',
-                                        fontFamily: 'monospace',
                                         '&:hover': {
                                             bgcolor: '#B22222',
                                         },
