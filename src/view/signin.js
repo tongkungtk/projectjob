@@ -9,11 +9,14 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import Appbar from '../component/Appbar';
+import Photo from '../photo/tk1.png'
+import Breadcrumbs from '../component/CustomBreadcrumbs';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {' Minikot '}
+      {'TK'}
       <Link color="inherit" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">
         Your Website
       </Link>{' '}
@@ -36,12 +39,17 @@ export default function SignIn() {
     });
   };
 
+
   return (
     <ThemeProvider theme={theme}>
-      
-                pages={[
-                    { title: "Sign in" },
-                ]} 
+      <Appbar></Appbar>
+
+      <Breadcrumbs
+        pages={[
+          { title: "Home", path: "/" },
+          { title: "Sign in", path: "/signin" },
+        ]}
+      />
 
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -53,7 +61,7 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-         
+          <img src={Photo} width="80" height="80" />
 
           <Typography
             component="h1"

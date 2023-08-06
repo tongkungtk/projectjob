@@ -85,6 +85,22 @@ export default function Appbar() {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <Stack direction="row" spacing={1}>
+                                
+                                <Button color="inherit"
+                                    variant="outlined"
+                                    href="/signin"
+                                    sx={{
+                                        bgcolor: '#FF8C00',
+                                        color: '#000000',
+                                        fontFamily: 'monospace',
+                                        '&:hover': {
+                                            bgcolor: '#B22222',
+                                        },
+                                    }}
+                                >
+                                    sign in
+                                </Button>
+
                                 <Button
                                     color="inherit"
                                     variant="outlined"
@@ -100,23 +116,9 @@ export default function Appbar() {
                                 >
                                     Sign Up
                                 </Button>
-                                <Button color="inherit"
-                                    variant="outlined"
-                                    href="/signin"
-                                    sx={{
-                                        bgcolor: '#FF8C00',
-                                        color: '#000000',
-                                        fontFamily: 'monospace',
-                                        '&:hover': {
-                                            bgcolor: '#B22222',
-                                        },
-                                    }}
-                                >
-                                    sign in
-                                </Button>
                             </Stack>
                         </Tooltip>
-
+ 
                     </Box>
                 </Toolbar>
             </Container>

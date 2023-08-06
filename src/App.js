@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //view
 import Home from './view/Home';
-import SignUp from './view/signin';
-import SignIn from './view/signup';
+import SignUp from './view/signup';
+import SignIn from './view/signin';
 
 
 //component
