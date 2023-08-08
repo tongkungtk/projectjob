@@ -4,9 +4,12 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
+import photo from '../photo/aov2.png';
 
 import Breadcrumbs from '../component/CustomBreadcrumbs';
+
 
 
 
@@ -17,13 +20,12 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <Breadcrumbs
         pages={[
+
           { title: "Home", path: "/" },
-          { title: "Sign in", path: "/signin" },
-          { title: "Sign up", path: "/signup" },
           { title: "Tournament", path: "/Tournament" },
-          { title: "TournamentList", path: "/TournamentList" },
         ]}
       />
+
 
 
 
@@ -32,7 +34,7 @@ export default function Home() {
         <Box
           sx={{
             pt: 15,
-            pb: 10,
+            pb: 25,
             width: '100%',
             height: '100%',
           }}
@@ -48,18 +50,162 @@ export default function Home() {
             >
 
 
-              <Button variant="contained" sx={{ backgroundColor: '#FF8C00', color: '#000000', 
-              m: 1, px: 7, py: 1, borderRadius: '10px', fontSize: '40px','&:hover': {
-                bgcolor: '#B22222',
-            },}}>
-                สร้างรายการแข่งขัน
-              </Button>
-              <Button variant="contained" sx={{ backgroundColor: '#FF8C00', color: '#000000', 
-              m: 1, px: 10.5, py: 1, borderRadius: '10px', fontSize: '40px','&:hover': {
-                bgcolor: '#B22222',
-            }, }}>
-                สมัครการแข่งขัน
-              </Button>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', width: '1280px' }}>
+                <Button
+                  component={Link}
+                  to="/other-page"
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    width: '100%',
+                    paddingTop: '15%',
+                    position: 'relative',
+                    borderRadius: '20px',
+                  }}
+                >
+                  <img
+                    src={photo}
+                    alt="icon"
+                    style={{
+                      position: 'absolute',
+                      top: 0, left: 0, right: 0, bottom: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '20px',
+                    }}
+                  />
+                </Button>
+                <Button
+                  component={Link}
+                  to="/other-page"
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    width: '100%',
+                    paddingTop: '15%',
+                    position: 'relative',
+                    borderRadius: '20px',
+                  }}
+                >
+                  <img
+                    src={photo}
+                    alt="icon"
+                    style={{
+                      position: 'absolute',
+                      top: 0, left: 0, right: 0, bottom: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '20px',
+                    }}
+                  />
+                </Button>
+                <Button
+                  component={Link}
+                  to="/other-page"
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    width: '100%',
+                    paddingTop: '1%',
+                    position: 'relative',
+                    borderRadius: '20px',
+                  }}
+                >
+                  <img
+                    src={photo}
+                    alt="icon"
+                    style={{
+                      position: 'absolute',
+                      top: 0, left: 0, right: 0, bottom: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '20px',
+                    }}
+                  />
+                </Button>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', width: '1280px' }}>
+                <Button
+                  component={Link}
+                  to="/other-page"
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    width: '100%',
+                    paddingTop: '15%',
+                    position: 'relative',
+                    borderRadius: '20px',
+                  }}
+                >
+                  <img
+                    src={photo}
+                    alt="icon"
+                    style={{
+                      position: 'absolute',
+                      top: 0, left: 0, right: 0, bottom: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '20px',
+                    }}
+                  />
+                </Button>
+                <Button
+                  component={Link}
+                  to="/other-page"
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    width: '100%',
+                    paddingTop: '15%',
+                    position: 'relative',
+                    borderRadius: '20px',
+                  }}
+                >
+                  <img
+                    src={photo}
+                    alt="icon"
+                    style={{
+                      position: 'absolute',
+                      top: 0, left: 0, right: 0, bottom: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '20px',
+                    }}
+                  />
+                </Button>
+                <Button
+                  component={Link}
+                  to="/other-page"
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    width: '100%',
+                    paddingTop: '1%',
+                    position: 'relative',
+                    borderRadius: '20px',
+                  }}
+                >
+                  <img
+                    src={photo}
+                    alt="icon"
+                    style={{
+                      position: 'absolute',
+                      top: 0, left: 0, right: 0, bottom: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '20px',
+                    }}
+                  />
+                </Button>
+              </div>
+
 
 
 

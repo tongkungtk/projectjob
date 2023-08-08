@@ -21,14 +21,14 @@ export default function Appbar() {
                 background: 'linear-gradient(45deg, #4a1a1c,#0f1849)',
             }}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters>    
-                <img
+                <Toolbar disableGutters>
+                    <img
                         src={photo}
                         width="50"
                         height="50"
                         sx={{ display: { xs: 'none', md: 'flex' } }}
                     />
-              
+
                     <Typography
                         variant="h6"
                         noWrap
@@ -37,7 +37,6 @@ export default function Appbar() {
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
@@ -45,7 +44,7 @@ export default function Appbar() {
                             marginLeft: 1,
                         }}
                     >
-                       Esports Management system
+                        Esports Management system
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -67,7 +66,6 @@ export default function Appbar() {
                             mr: 1,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
-                            fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
@@ -75,7 +73,7 @@ export default function Appbar() {
                             marginRight: 3,
                         }}
                     >
-              
+
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -85,7 +83,7 @@ export default function Appbar() {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <Stack direction="row" spacing={1}>
-                                
+
                                 <Button color="inherit"
                                     variant="outlined"
                                     href="/signin"
@@ -116,7 +114,7 @@ export default function Appbar() {
                                 </Button>
                             </Stack>
                         </Tooltip>
- 
+
                     </Box>
                 </Toolbar>
             </Container>

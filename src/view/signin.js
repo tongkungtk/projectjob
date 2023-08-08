@@ -16,19 +16,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Breadcrumbs from '../component/CustomBreadcrumbs';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" sx={{ color: '#000000' }}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://www.facebook.com/profile.php?id=100004005796627" sx={{ color: '#000000' }}>
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
 
-  );
-}
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
@@ -51,10 +39,7 @@ export default function SignInSide() {
       <Breadcrumbs
         pages={[
           { title: "Home", path: "/" },
-          { title: "Sign in", path: "/signin" },
-          { title: "Sign up", path: "/signup" },
           { title: "Tournament", path: "/Tournament" },
-          { title: "TournamentList", path: "/TournamentList" },
         ]}
       />
 
@@ -150,8 +135,6 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }}
-              />
             </Box>
           </Box>
         </Grid>

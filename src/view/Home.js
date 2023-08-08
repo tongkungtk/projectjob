@@ -7,6 +7,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Appbar from '../component/Appbar';
 
+
 const theme = createTheme();
 
 export default function Home() {

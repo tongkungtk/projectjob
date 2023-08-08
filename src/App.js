@@ -7,6 +7,14 @@ import Home from './view/Home';
 import SignUp from './view/signup';
 import SignIn from './view/signin';
 import Tournament from './view/Tournament';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Prompt', 
+  },
+});
 
 
 //component
@@ -24,9 +32,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/Tournament" element={<Tournament />} />
 
-        //component
-    
-        //addmin
+        //componen
       
       </Routes>
 

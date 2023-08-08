@@ -16,19 +16,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Breadcrumbs from '../component/CustomBreadcrumbs';
 
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" sx={{ color: '#000000' }}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://www.facebook.com/profile.php?id=100004005796627" sx={{ color: '#000000' }}>
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
 
-  );
-}
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
@@ -51,10 +39,7 @@ export default function SignUp() {
       <Breadcrumbs
         pages={[
           { title: "Home", path: "/" },
-          { title: "Sign in", path: "/signin" },
-          { title: "Sign up", path: "/signup" },
           { title: "Tournament", path: "/Tournament" },
-          { title: "TournamentList", path: "/TournamentList" },
         ]}
       />
 
@@ -81,70 +66,94 @@ export default function SignUp() {
             Sign up
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                  sx={{
-                    backgroundColor: '#ffffff',
-                    borderRadius: '10px',
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  sx={{
-                    backgroundColor: '#ffffff',
-                    borderRadius: '10px',
-                  }}
+          <Grid container spacing={2}>
+  <Grid item xs={12} sm={6}>
+    <TextField
+      autoComplete="given-name"
+      name="firstName"
+      required
+      fullWidth
+      id="firstName"
+      label="First Name"
+      autoFocus
+      sx={{
+        backgroundColor: '#ffffff',
+        borderRadius: '10px',
+      }}
+    />
+  </Grid>
+  <Grid item xs={12} sm={6}>
+    <TextField
+      required
+      fullWidth
+      id="lastName"
+      label="Last Name"
+      name="lastName"
+      autoComplete="family-name"
+      sx={{
+        backgroundColor: '#ffffff',
+        borderRadius: '10px',
+      }}
+    />
+  </Grid>
+  <Grid item xs={12} sm={6}>
+    <TextField
+      required
+      fullWidth
+      id="age"
+      label="Age"
+      name="age"
+      type="number" // กำหนดให้เป็นช่องกรอกตัวเลข
+      sx={{
+        backgroundColor: '#ffffff',
+        borderRadius: '10px',
+      }}
+    />
+  </Grid>
+  <Grid item xs={12} sm={6}>
+    <TextField
+      required
+      fullWidth
+      id="aka"
+      label="AKA"
+      name="aka"
+      sx={{
+        backgroundColor: '#ffffff',
+        borderRadius: '10px',
+      }}
+    />
+  </Grid>
+  <Grid item xs={12}>
+    <TextField
+      required
+      fullWidth
+      id="email"
+      label="Email Address"
+      name="email"
+      autoComplete="email"
+      sx={{
+        backgroundColor: '#ffffff',
+        borderRadius: '10px',
+      }}
+    />
+  </Grid>
+  <Grid item xs={12}>
+    <TextField
+      required
+      fullWidth
+      name="password"
+      label="Password"
+      type="password"
+      id="password"
+      autoComplete="new-password"
+      sx={{
+        backgroundColor: '#ffffff',
+        borderRadius: '10px',
+      }}
+    />
+  </Grid>
+</Grid>
 
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  sx={{
-                    backgroundColor: '#ffffff',
-                    borderRadius: '10px',
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                  sx={{
-                    backgroundColor: '#ffffff',
-                    borderRadius: '10px',
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-
-              </Grid>
-            </Grid>
             <Button
               type="submit"
               fullWidth
@@ -168,13 +177,12 @@ export default function SignUp() {
                     textDecoration: 'underline',
                   }}>
                   Already have an account? Sign in
-
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
+
       </Container>
     </ThemeProvider>
   );
