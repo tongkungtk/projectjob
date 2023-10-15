@@ -142,16 +142,15 @@ router.get('/', async (req, res) => {
 router.get('/:id',async (req,res) => {
     const conn = await pool.getConnection();
     try {
-        console.log(req.params.id)
-        if(req.params.id === null) return res.status(404).send({message:"No team"})
+        
         const result = await conn.query("SELECT * FROM Team WHERE team_id = ?",[req.params.id])
         const members = await conn.query("SELECT * FROM Member WHERE team_id = ?",[req.params.id])
         //Check if result is empty return 404 status code and message
         if (!result || !Array.isArray(result) || result.length === 0){
-            return  res.status(404).send({message:"Team not found"})
+            res.status(404).send({message:"Team not found"})
         };
         const team = result[0]
-        return res.status(200).send({message:`Team ${req.params.id}`,data:{result:team,members}})
+        res.status(200).send({message:`Team ${req.params.id}`,data:{result:team,members}})
         
         
         
